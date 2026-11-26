@@ -1,0 +1,607 @@
+/* ==========================================================
+   MR. BUAS HOMEPAGE
+   Tambahan khusus halaman beranda; tidak mengubah CSS modul lain.
+   ========================================================== */
+
+body.mr-home {
+    background: #f7f9fc;
+    color: #172033;
+    overflow-x: hidden;
+}
+
+body.mr-home .home-container {
+    width: min(1200px, calc(100% - 48px));
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 0;
+}
+
+body.mr-home .hero-home {
+    min-height: 790px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1px;
+    background-image: url("../images/hero-home.jpg");
+    background-size: cover;
+    background-position: center 42%;
+    background-repeat: no-repeat;
+    color: #fff;
+    overflow: visible;
+}
+
+body.mr-home .hero-home-overlay {
+    background: linear-gradient(
+        90deg,
+        rgba(3, 18, 48, .97) 0%,
+        rgba(5, 28, 68, .91) 38%,
+        rgba(5, 28, 68, .57) 67%,
+        rgba(5, 28, 68, .20) 100%
+    );
+}
+
+body.mr-home .home-navbar {
+    z-index: 20;
+    padding: 26px 0;
+}
+
+body.mr-home .home-nav-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+body.mr-home .home-brand-logo {
+    flex: 0 0 auto;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: .82;
+    letter-spacing: -1px;
+}
+
+body.mr-home .home-brand-logo span,
+body.mr-home .home-footer-brand span {
+    color: #ffd600;
+}
+
+body.mr-home .home-nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(18px, 2.8vw, 38px);
+    margin-left: auto;
+    padding: 0;
+    list-style: none;
+}
+
+body.mr-home .home-nav-menu a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 0 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+body.mr-home .home-nav-menu a:hover,
+body.mr-home .home-nav-menu a.active {
+    color: #ffd600;
+}
+
+body.mr-home .home-nav-menu a.active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 99px;
+    background: #ffd600;
+}
+
+body.mr-home .home-menu-toggle {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255,255,255,.45);
+    border-radius: 10px;
+    background: rgba(4, 24, 59, .45);
+    color: #fff;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+body.mr-home .home-menu-toggle-lines,
+body.mr-home .home-menu-toggle-lines::before,
+body.mr-home .home-menu-toggle-lines::after {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+}
+
+body.mr-home .home-menu-toggle-lines {
+    position: relative;
+}
+
+body.mr-home .home-menu-toggle-lines::before,
+body.mr-home .home-menu-toggle-lines::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+body.mr-home .home-menu-toggle-lines::before { top: -6px; }
+body.mr-home .home-menu-toggle-lines::after { top: 6px; }
+
+body.mr-home .hero-home-content {
+    z-index: 5;
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    min-height: 550px;
+    padding-top: 35px;
+    padding-bottom: 105px;
+}
+
+body.mr-home .hero-home-text {
+    width: min(760px, 68%);
+    max-width: 760px;
+}
+
+body.mr-home .hero-home-badge {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    border: 1px solid rgba(42, 151, 255, .9);
+    border-radius: 999px;
+    background: rgba(0, 70, 145, .34);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+body.mr-home .hero-home-badge strong {
+    color: #ffd600;
+}
+
+body.mr-home .hero-home-text h1 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 900;
+    line-height: .99;
+    letter-spacing: -2.8px;
+}
+
+body.mr-home .hero-home-text h1 span {
+    display: block;
+    color: #ffd600;
+}
+
+body.mr-home .hero-home-description {
+    max-width: 620px;
+    margin-top: 24px;
+    color: rgba(255,255,255,.9);
+    font-size: clamp(17px, 1.7vw, 21px);
+    line-height: 1.6;
+}
+
+body.mr-home .hero-home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+body.mr-home .hero-primary-button,
+body.mr-home .hero-secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 52px;
+    padding: 13px 23px;
+    border: 2px solid transparent;
+    border-radius: 11px;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform .2s ease, background-color .2s ease, color .2s ease;
+}
+
+body.mr-home .hero-primary-button {
+    border-color: #ffd600;
+    background: #ffd600;
+    color: #071a40;
+}
+
+body.mr-home .hero-primary-button:hover,
+body.mr-home .hero-secondary-button:hover {
+    transform: translateY(-2px);
+}
+
+body.mr-home .hero-secondary-button {
+    border-color: rgba(255,255,255,.8);
+    background: rgba(4, 24, 59, .28);
+    color: #fff;
+}
+
+body.mr-home .hero-secondary-button:hover {
+    background: #fff;
+    color: #071a40;
+}
+
+body.mr-home .home-statistics {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 0;
+    width: min(1120px, calc(100% - 64px));
+    max-width: 1120px;
+    margin: -8px auto 38px;
+    padding: 28px 18px;
+    border: 1px solid rgba(45, 145, 255, .75);
+    border-radius: 22px;
+    background: linear-gradient(105deg, rgba(0, 38, 97, .98), rgba(0, 63, 150, .96));
+    box-shadow: 0 18px 48px rgba(0, 20, 55, .24);
+}
+
+body.mr-home .home-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    min-width: 0;
+    padding: 8px 24px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform .2s ease;
+}
+
+body.mr-home a.home-stat-item:hover {
+    transform: translateY(-3px);
+}
+
+body.mr-home .home-stat-item:not(:last-child) {
+    border-right: 1px solid rgba(255,255,255,.25);
+}
+
+body.mr-home .home-stat-icon {
+    display: flex;
+    flex: 0 0 56px;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #0879fa;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+body.mr-home .home-stat-icon.yellow {
+    background: #d9b500;
+}
+
+body.mr-home .home-stat-copy {
+    min-width: 0;
+}
+
+body.mr-home .home-stat-item h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(20px, 2.1vw, 29px);
+    font-weight: 900;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+body.mr-home .home-stat-item h3 {
+    margin: 5px 0 5px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+body.mr-home .home-stat-item p {
+    margin: 0;
+    color: #c9d7ed;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+body.mr-home .home-about {
+    padding: 104px 0 96px;
+    background: #f7f9fc;
+}
+
+body.mr-home .home-about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, .95fr);
+    align-items: center;
+    gap: clamp(38px, 7vw, 88px);
+}
+
+body.mr-home .home-section-eyebrow {
+    margin: 0 0 14px;
+    color: #0a56d9;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .14em;
+}
+
+body.mr-home .home-about-intro h2 {
+    max-width: 560px;
+    margin: 0;
+    color: #0b1d42;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+body.mr-home .home-about-description {
+    max-width: 590px;
+    margin: 20px 0 0;
+    color: #58657a;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+body.mr-home .home-about-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    color: #0a56d9;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+body.mr-home .home-about-link span {
+    font-size: 20px;
+    transition: transform .2s ease;
+}
+
+body.mr-home .home-about-link:hover span {
+    transform: translateX(4px);
+}
+
+body.mr-home .home-about-cards {
+    display: grid;
+    gap: 13px;
+}
+
+body.mr-home .home-about-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    padding: 21px 22px;
+    border: 1px solid #e3eaf4;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 22px rgba(20, 44, 80, .045);
+}
+
+body.mr-home .home-about-card-number {
+    display: inline-flex;
+    flex: 0 0 42px;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #eaf2ff;
+    color: #0a56d9;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+body.mr-home .home-about-card h3 {
+    margin: 1px 0 5px;
+    color: #10264c;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+body.mr-home .home-about-card p {
+    margin: 0;
+    color: #68758a;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+body.mr-home .home-footer {
+    padding: 30px 0;
+    background: #071a40;
+    color: #fff;
+}
+
+body.mr-home .home-footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+}
+
+body.mr-home .home-footer-brand {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+body.mr-home .home-footer-inner p {
+    margin: 0;
+    color: #c9d7ed;
+    font-size: 13px;
+}
+
+body.mr-home .home-footer-inner small {
+    color: #aabbd5;
+    font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+    body.mr-home .home-nav-menu {
+        gap: 18px;
+    }
+
+    body.mr-home .home-nav-menu a {
+        font-size: 14px;
+    }
+
+    body.mr-home .home-stat-item {
+        gap: 12px;
+        padding-inline: 16px;
+    }
+
+    body.mr-home .home-stat-icon {
+        flex-basis: 48px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 760px) {
+    body.mr-home .hero-home {
+        min-height: 0;
+        background-position: 62% center;
+    }
+
+    body.mr-home .home-navbar {
+        padding: 20px 0;
+    }
+
+    body.mr-home .home-menu-toggle {
+        display: inline-flex;
+        margin-left: auto;
+    }
+
+    body.mr-home .home-nav-menu {
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        left: 0;
+        z-index: 30;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        margin: 0;
+        padding: 12px;
+        border: 1px solid rgba(255,255,255,.16);
+        border-radius: 14px;
+        background: #071a40;
+        box-shadow: 0 16px 36px rgba(0,0,0,.24);
+    }
+
+    body.mr-home .home-nav-menu.is-open {
+        display: flex;
+    }
+
+    body.mr-home .home-nav-menu a {
+        display: block;
+        padding: 12px 10px;
+        border-radius: 8px;
+    }
+
+    body.mr-home .home-nav-menu a.active::after {
+        right: auto;
+        bottom: 5px;
+        left: 10px;
+        width: 28px;
+        height: 2px;
+    }
+
+    body.mr-home .hero-home-content {
+        min-height: 490px;
+        padding-top: 52px;
+        padding-bottom: 90px;
+    }
+
+    body.mr-home .hero-home-text {
+        width: 100%;
+        max-width: 590px;
+    }
+
+    body.mr-home .hero-home-text h1 {
+        font-size: clamp(42px, 10vw, 62px);
+        letter-spacing: -1.8px;
+    }
+
+    body.mr-home .hero-home-badge {
+        max-width: 100%;
+        font-size: 13px;
+    }
+
+    body.mr-home .hero-home-description {
+        max-width: 480px;
+        font-size: 16px;
+    }
+
+    body.mr-home .home-statistics {
+        grid-template-columns: 1fr;
+        width: calc(100% - 36px);
+        margin-top: -28px;
+        padding: 14px 18px;
+        border-radius: 17px;
+    }
+
+    body.mr-home .home-stat-item {
+        padding: 16px 5px;
+    }
+
+    body.mr-home .home-stat-item:not(:last-child) {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.22);
+    }
+
+    body.mr-home .home-stat-item h2 {
+        font-size: 23px;
+    }
+
+    body.mr-home .home-about {
+        padding: 70px 0;
+    }
+
+    body.mr-home .home-about-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    body.mr-home .home-footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 420px) {
+    body.mr-home .home-container {
+        width: calc(100% - 36px);
+    }
+
+    body.mr-home .hero-home-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    body.mr-home .hero-primary-button,
+    body.mr-home .hero-secondary-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
